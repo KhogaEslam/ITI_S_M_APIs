@@ -2,10 +2,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 ini_set('html_errors', true);
- ?>
+
+   require_once("config.php");
+?>
 <?php
-    $client_id = "[LINKEDIN_CLIENT_ID]";
-    $client_secret = "[LINKED_IN_CLIENT_SECRET]";
+    $client_id = $_LINKEDIN_CLIENT_ID;
+    $client_secret = $_LINKEDIN_CLIENT_SECRET;
 
     $request = Array(
         'grant_type' => 'authorization_code',

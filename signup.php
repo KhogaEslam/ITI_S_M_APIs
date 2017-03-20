@@ -198,7 +198,7 @@ button {
       <button type="submit" class="signupbtn">Sign Up</button>
       <script>
         function logOut() {
-            var link = "http://apiproject.com/destroySession.php";
+            var link = "http://apiproject.com/logout.php";
             location.href = link;
           }
       </script>

@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 ini_set('html_errors', true);
-
+require_once("config.php");
 
 if (isset($_POST["register"])){
   header('Location: /signup.php');
@@ -23,7 +23,7 @@ if(isset($_POST["login"])){
 <html>
 <head>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id" content="[GOOGLE_API_KEY].apps.googleusercontent.com">
+  <meta name="google-signin-client_id" content="<?= $_GOOGLE_CLIENT_ID ?>">
   <style>
     form {
         border: 3px solid #f1f1f1;
@@ -151,7 +151,7 @@ if(isset($_POST["login"])){
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="pass">
         <?php
-          $client_id = "[LINKED_IN_CLIENT_ID]";
+          $client_id = $_LINKEDIN_CLIENT_ID;
           $time = md5(time());
          ?>
         <button name="login" type="submit">Login</button>
